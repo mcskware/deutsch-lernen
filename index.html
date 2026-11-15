@@ -272,7 +272,7 @@
                     </div>
                 </div>
 
-                <div class="question">What is the meaning of this german word?</div>
+                <div class="question">What is the meaning of this german <span id="pos_type">word</span>?</div>
                 <div class="hieroglyph-display" id="hieroglyph-display"></div>
 
                 <div class="answers" id="answers"></div>
@@ -289,7 +289,7 @@
     </div>
 
     <script>
-        let hieroglyphs = [];
+        let word_pairs = [];
         let currentQuestion = null;
         let correctAnswers = [];
         let totalQuestions = 0;
@@ -306,12 +306,13 @@
         // Load hieroglyph data from JSON file
         async function loadHieroglyphData() {
             try {
-                const response = await fetch('./eng_deu.json');
+                const response = await fetch('./german.json');
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const data = await response.json();
-                hieroglyphs = data.word_pairs;
+                word_pairs = data.word_pairs;
+                console.log("There are ", word_pairs.length, " word pairs");
 
                 // Hide loading, show quiz
                 document.getElementById('loading').style.display = 'none';
@@ -336,7 +337,7 @@
         function getRandomHieroglyphs(count, exclude) {
             // here, if the current exclude is capitalized, we want to match only
             // other capitalized words. similarly for uncapitalized things
-            const available = hieroglyphs.filter(h => h !== exclude && startsWithCapital(h) === startsWithCapital(exclude));
+            const available = word_pairs.filter(h => h !== exclude && h.pos === exclude.pos);
             const shuffled = [...available].sort(() => Math.random() - 0.5);
             return shuffled.slice(0, count);
         }
@@ -346,13 +347,16 @@
         }
 
         function generateQuestion() {
-            if (hieroglyphs.length === 0) return;
+            if (word_pairs.length === 0) return;
 
             // Reset previous question state
             document.getElementById('next-button').style.display = 'none';
 
             // Get a random hieroglyph for the question
-            currentQuestion = hieroglyphs[Math.floor(Math.random() * hieroglyphs.length)];
+            currentQuestion = word_pairs[Math.floor(Math.random() * word_pairs.length)];
+
+            // set the pos_type span to the correct pos as text
+            document.getElementById('pos_type').innerText = currentQuestion.pos;
 
             // Display the hieroglyph (clean up the unicode to show just the first variant)
             const cleanUnicode = isGuessTypeHieroglyph ? currentQuestion.german.split('/')[0] : currentQuestion.english;
@@ -414,7 +418,7 @@
                 <div class="correct-hieroglyph">${cleanUnicode}</div>
                 <div>
                     <div class="correct-transliteration">${hieroglyph.english}</div>
-                    <div class="correct-type">${hieroglyph.type}</div>
+                    <div class="correct-type">${hieroglyph.pos}</div>
                 </div>
             `;
 
