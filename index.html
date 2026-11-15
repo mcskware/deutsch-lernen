@@ -333,10 +333,16 @@
             }
         }
 
-        function getRandomHieroglyphs(count, exclude = null) {
-            const available = hieroglyphs.filter(h => h !== exclude);
+        function getRandomHieroglyphs(count, exclude) {
+            // here, if the current exclude is capitalized, we want to match only
+            // other capitalized words. similarly for uncapitalized things
+            const available = hieroglyphs.filter(h => h !== exclude && startsWithCapital(h) === startsWithCapital(exclude));
             const shuffled = [...available].sort(() => Math.random() - 0.5);
             return shuffled.slice(0, count);
+        }
+
+        function startsWithCapital(thing) {
+            return thing.german[0] === thing.german[0].toUpperCase()
         }
 
         function generateQuestion() {
