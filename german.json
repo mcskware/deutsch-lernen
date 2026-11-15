@@ -1891,11 +1891,6 @@
       "pos": "noun"
     },
     {
-      "english": "nonstandard form of 'n",
-      "german": "n",
-      "pos": "determiner"
-    },
-    {
       "english": "every",
       "german": "all",
       "pos": "pronoun"
@@ -5191,11 +5186,6 @@
       "pos": "verb"
     },
     {
-      "english": "nonstandard form of 'n",
-      "german": "nen",
-      "pos": "determiner"
-    },
-    {
       "english": "proof",
       "german": "Beweise",
       "pos": "noun"
@@ -7843,11 +7833,6 @@
     {
       "english": "ear",
       "german": "Ohren",
-      "pos": "noun"
-    },
-    {
-      "english": "apocopic form of Aue",
-      "german": "Au",
       "pos": "noun"
     },
     {
@@ -14896,11 +14881,6 @@
       "pos": "adjective"
     },
     {
-      "english": "archaic form of Mulde",
-      "german": "Mulder",
-      "pos": "noun"
-    },
-    {
       "english": "a century",
       "german": "Jahrhundert",
       "pos": "noun"
@@ -21636,11 +21616,6 @@
       "pos": "noun"
     },
     {
-      "english": "archaic form of Daten",
-      "german": "Data",
-      "pos": "noun"
-    },
-    {
       "english": "golden; gold",
       "german": "goldene",
       "pos": "adjective"
@@ -22349,11 +22324,6 @@
       "english": "some; any",
       "german": "irgendeiner",
       "pos": "pronoun"
-    },
-    {
-      "english": "archaic form of wurde, first/third-person singular…",
-      "german": "ward",
-      "pos": "verb"
     },
     {
       "english": "visit, call",
@@ -27104,11 +27074,6 @@
       "english": "to win; to be victorious",
       "german": "gewinnst",
       "pos": "verb"
-    },
-    {
-      "english": "archaic form of Schmied",
-      "german": "Schmidt",
-      "pos": "noun"
     },
     {
       "english": "to conclude, end; to terminate",
@@ -45286,7 +45251,7 @@
       "pos": "verb"
     },
     {
-      "english": "married woman, wife; female form of Gatte",
+      "english": "married woman, wife",
       "german": "Gattin",
       "pos": "noun"
     },
@@ -45643,11 +45608,6 @@
     {
       "english": "demonstration",
       "german": "Demonstration",
-      "pos": "noun"
-    },
-    {
-      "english": "archaic form of Porst",
-      "german": "Porsche",
       "pos": "noun"
     },
     {
@@ -47048,11 +47008,6 @@
     {
       "english": "toe",
       "german": "Zeh",
-      "pos": "noun"
-    },
-    {
-      "english": "apocopic form of Freude",
-      "german": "Freud",
       "pos": "noun"
     },
     {
